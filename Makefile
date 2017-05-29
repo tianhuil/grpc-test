@@ -14,8 +14,8 @@ build-node:
 	cd node && npm install
 	grpc_tools_node_protoc --js_out=import_style=commonjs,binary:node/ --grpc_out=node/ --plugin=protoc-gen-grpc=`which grpc_tools_node_protoc_plugin` proto/helloworld.proto
 
-node-server: build-node
+node-server:
 	cd node && node greeter_server.js
 
-node-client: build-node
+node-client:
 	cd node && node greeter_client.js
